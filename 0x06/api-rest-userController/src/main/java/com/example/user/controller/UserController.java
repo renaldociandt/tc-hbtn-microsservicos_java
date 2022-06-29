@@ -12,31 +12,31 @@ public class UserController {
     @GetMapping("/user-id/{id}")
     public String findUserById(@PathVariable int id) {
         String msg = "You have entered valid ID";
-        if (!(id > 0 && id <100)){
-            throw new NullPointerException();
+        if ((id > 0 && id < 100)) {
+            return msg;
         }
-        return msg;
+        throw new NullPointerException();
+
     }
 
     @GetMapping("/user-name/{userName}")
     public String findUserByName(@PathVariable String userName) {
 
         String msg = "You have entered valid USERNAME";
-        if (!(userName.length() > 3 && userName.length() < 15)){
-            throw new NullPointerException();
+        if ((userName.length() > 3 && userName.length() < 15)) {
+            return msg;
         }
-        return msg;
+        throw new NullPointerException();
     }
 
     @GetMapping("/user-cpf/{cpf}")
     public String findUserByCPF(@PathVariable String cpf) {
 
         String msg = "You have entered valid CPF";
-        if (!isCPF(cpf)) {
-            throw new NullPointerException();
+        if (isCPF(cpf)) {
+            return msg;
         }
-        return msg;
-
+        throw new NullPointerException();
     }
 
     public boolean isCPF(String cpf) {
