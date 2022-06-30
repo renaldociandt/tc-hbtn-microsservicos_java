@@ -4,6 +4,11 @@ import org.junit.jupiter.api.Test;
 
 public class CalculatorTest {
 
+    @BeforeEach
+    void iniciar(){
+        Calculator calculator = new Calculator();
+    }
+
     @Test
     void sumTest() {
         // TODO
