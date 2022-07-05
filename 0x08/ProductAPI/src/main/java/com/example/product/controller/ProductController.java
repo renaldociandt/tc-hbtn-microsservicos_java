@@ -15,6 +15,7 @@ import java.util.List;
 public class ProductController {
     @Autowired
     ProductRepository productRepository = new ProductRepository();
+    @ApiResponse(code = 12, message = "Responsavel por retornar uma mensagem de boas vindas")
     @GetMapping("/welcome")
     public String mensagemBoasVindas() {
 
