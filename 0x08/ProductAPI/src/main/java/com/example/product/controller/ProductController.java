@@ -15,7 +15,7 @@ import java.util.List;
 public class ProductController {
     @Autowired
     ProductRepository productRepository = new ProductRepository();
-    @ApiResponse(code = 12, message = "Responsavel por retornar uma mensagem de boas vindas")
+    @ApiResponse(code = 12, message = "Responsável por retornar uma mensagem de boas vindas")
     @GetMapping("/welcome")
     public String mensagemBoasVindas() {
 
@@ -23,18 +23,18 @@ public class ProductController {
     }
 
     @GetMapping(path = "/allProduct")
-    @ApiResponse(code = 11, message = "Responsavel por retornar uma lista de produtos")
+    @ApiResponse(code = 11, message = "Responsável por retornar uma lista de produtos")
     public List<Product> allProducts(){
         return productRepository.getAllProducts();
     }
 
-    @ApiResponse(code = 12, message = "Responsavel por retornar um produto pelo id")
+    @ApiResponse(code = 12, message = "Responsável por retornar um produto pelo id")
     @GetMapping(path = "/findProductById/{id}")
     public Product findProductById(@PathVariable Integer id){
         return productRepository.getProductById(id);
     }
 
-    @ApiResponse(code = 10, message = "Responsavel por adicionar um produto")
+    @ApiResponse(code = 10, message = "Responsável por adicionar um produto")
     @PostMapping(path = "/addProduct", consumes = "application/json", produces = "application/json")
     public Product addProduct(@RequestBody Product product){
          productRepository.addProduct(product);
@@ -47,7 +47,7 @@ public class ProductController {
         productRepository.updateProduct(product);
     }
 
-    @ApiResponse(code = 13, message = "Responsavel por remover um produto")
+    @ApiResponse(code = 13, message = "Responsável por remover um produto")
     @DeleteMapping(path = "/removeProduct", consumes = "application/json", produces = "application/json")
     public void removeProduct(@RequestBody Product product){
         productRepository.removeProduct(product);
