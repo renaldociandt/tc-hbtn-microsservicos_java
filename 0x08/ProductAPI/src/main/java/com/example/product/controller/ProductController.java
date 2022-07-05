@@ -13,9 +13,13 @@ import java.util.List;
 @RestController
 @RequestMapping("/product")
 public class ProductController {
-
     @Autowired
     ProductRepository productRepository = new ProductRepository();
+    @GetMapping("/welcome")
+    public String mensagemBoasVindas() {
+
+        return "BEM VINDO À PRODUCT REST API.";
+    }
 
     @GetMapping(path = "/allProduct")
     @ApiResponse(code = 11, message = "Responsavel por retornar uma lista de produtos")
