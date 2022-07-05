@@ -41,7 +41,7 @@ public class ProductController {
          return product;
     }
 
-    @ApiResponse(code = 14, message = "Responsavel por atualizar um produto")
+    @ApiResponse(code = 14, message = "Responsável por atualizar um produto")
     @PutMapping(path = "/updateProduct", consumes = "application/json", produces = "application/json")
     public void upadateProduct(@RequestBody Product product){
         productRepository.updateProduct(product);
